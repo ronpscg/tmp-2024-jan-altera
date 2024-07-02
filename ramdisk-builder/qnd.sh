@@ -103,8 +103,7 @@ fsck_wrapper_check_by_partition_path() {
 }
 
 dos_fsck_wrapper_check_by_partition_path() {
-	return 0
-	echo "Not supported at this point, might implement something different for it. do note that -a -p -y are the same for the vfat fsck, and in general we should not be using it"
+	# this is not really needed in most cases and systems. Note that -a -p -y are the same for the vfat fsck, and in general we should not be using it
         local blockdev=\$1
         verbose_do fsck.vfat -p \$blockdev
         case \$? in
