@@ -68,7 +68,7 @@ do_switch_root() {
 	# TODO: do unmounts etc., and preferably do in ramdisk, but there is a chance we don't get the privilege to update a ramdisk, so for this particular one we chroot
 	# note that current loading is not with a ramdisk but with a minimal read-only fs
 	#
-	mount \$NEWROOT_DEVICE /newroot
+	mount -o ro \$NEWROOT_DEVICE /newroot
 	exec chroot newroot /sbin/init
 }
 
